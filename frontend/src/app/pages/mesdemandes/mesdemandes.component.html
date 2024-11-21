@@ -1,0 +1,41 @@
+<div class="bg">
+  <a class="btn btn-details btn-outline-dark btn-lg " routerLink="/CREATEDEMANDES" role="button"
+    style=" margin-top:30px; margin-left:30px; background-color:#edba60;"> Demander Service</a>
+  <div class="tit-his">
+    <h1 class="fw-bolder text-center" style="color: #000000;">Historique de demandes</h1>
+  </div>
+  <table class="table tab-his caption-top">
+    <thead class="table" style="background-color: #edba60;">
+      <tr>
+        <th class="text-center" scope="col">Id</th>
+        <th scope="col">Voiture</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Date</th>
+        <th scope="col">Etat</th>
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="demandes.length > 0; else notFound">
+        <tr *ngFor="let demande of demandes; let i = index">
+          <th scope="row">{{demande.demandesId}}</th>
+          <td>{{ demande.Voiture }}</td>
+          <td>{{ demande.Destination }}</td>
+          <td>{{ demande.Date }}</td>
+          <td>{{ demande.Etat === 'P' ? "en cours": demande.Etat === 'T' ? "Terminer" : "chauffeur en route"}}</td>
+          <td>
+            <button class="btn btn-outline-dark btn-lg bg-red"
+              (click)="removeDemande(demande.demandesId)">Supprimer</button>
+          </td>
+        </tr>
+      </ng-container>
+      <ng-template #notFound>
+        <tr>
+          <td colspan="4" class="text-center">No demandes found</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+
+</div>

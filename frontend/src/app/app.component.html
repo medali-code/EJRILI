@@ -1,0 +1,5 @@
+<app-navb *ngIf="isEmptyObject(user.user)"></app-navb>
+<app-navbar *ngIf="!isEmptyObject(user.user)"></app-navbar>
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

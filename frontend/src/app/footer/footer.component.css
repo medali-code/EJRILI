@@ -1,0 +1,12 @@
+
+
+
+.details{
+    justify-content: center;
+}
+footer{
+    background-color: #f4e2c2;
+}
+footer ul li::marker{
+    color: transparent;
+}

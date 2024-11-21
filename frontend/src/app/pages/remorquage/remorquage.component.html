@@ -1,0 +1,90 @@
+<div class="rmrq-img">
+  <section class="rmrq-sec">
+    <div class="container py-5">
+      <div class="row justify-content-center mb-3">
+        <div class="col-md-12 col-xl-10">
+
+        </div>
+      </div>
+      <div class="row justify-content-center mb-3">
+        <div class="col-md-12 col-xl-10">
+          <div class="col-md-6 col-lg-6 col-xl-6 position-relative">
+            <div class="d-flex flex-row">
+              <!-- Content of the column -->
+            </div>
+            <div class="mt-1 mb-0 text-muted small">
+              <!-- Content of the column -->
+            </div>
+            <div>
+              <!-- Content of the column -->
+            </div>
+          </div>
+
+
+
+          <div class="card shadow-0 border rounded-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12 col-lg-3 col-xl-3 mb-lg-0">
+                  <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                    <img src="../../../assets/1/ejrili.jpeg" height="65" alt="Ejrili Logo" style="margin-left: 80px;" />
+                    <a href="#!">
+                      <div class="hover-overlay">
+                        <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-md-8 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                  <div>
+                    <h2 type="submit" class="text-dark">Demandes en attente</h2>
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr class="bg-warning">
+                          <th class="text-center" scope="col">nom</th>
+                          <th class="text-center" scope="col">prenom</th>
+                          <th class="text-center" scope="col">date</th>
+                          <th class="text-center" scope="col">Destination</th>
+                          <th class="text-center" scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let d of remorquage">
+                          <td>{{d.user.nom}}</td>
+                          <td>{{d.user.prenom}}</td>
+                          <td>{{d.Demande.Date}}</td>
+                          <td>{{d.Demande.Destination }}</td>
+                          <td>
+                            sélectionnez un camion
+                            <select #slected class=" form-select" aria-label="Default select example">
+                              <option *ngFor="let c of camion" [value]="c.cammionsId">{{c.marque}}</option>
+                            </select>
+                            <button class="btn btn-outline-dark btn-lg bg-red"
+                              (click)="accepterDemandes(d.Demande.demandesId,slected.value)">Accepter</button>
+
+                          </td>
+
+                          <!--                   <td>
+                            sélectionnez un camion
+                            <select class=" form-select" aria-label="Default select example">
+                              <option *ngFor="let c of camions" [value]="c.id">{{c.marque}}</option>
+                              </select>
+                              <button class="btn btn-primary">accepter</button>
+                              <br><br>
+                          </td> -->
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

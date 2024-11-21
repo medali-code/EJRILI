@@ -1,0 +1,94 @@
+agm-map{
+  height: 200px;
+  filter: brightness(0.8);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+.rmrq-sec
+{
+  
+  height: fit-content;
+}
+
+.rmrq-sec .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: 40px;
+}
+
+.rmrq-sec .row::after {
+  content: "";
+  flex-grow: 9999;
+  width: 100%;
+}
+
+.rmrq-sec .row > [class^="col-"],
+.row > [class*=" col-"].rmrq-sec  {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.btn-demander-service {
+  background-color: #ffc107;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-demander-service:hover {
+  background-color: #ff9800;
+}
+
+.btn-demander-service:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+
+@media (max-width: 767px) {
+  .rmrq-sec .row {
+     margin-left: 0;
+    margin-right: 0;
+    
+  }
+
+  .rmrq-sec .row > [class^="col-"],
+ .rmrq-sec  .row > [class*=" col-"] {
+    padding-left: 0;
+    padding-right: 10px;
+  }
+}
+
+ .rmrq-img
+{
+  background: url("../../../assets/1/light.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(0.8);
+  filter: blur(0px);
+  z-index: -10;
+  
+}
+
+
+.form-field {
+  margin-bottom: 10px;
+}
+
+.form-field input {
+  width: 100%;
+}
+
+.demander {
+  /* Custom styles for the "Demander" button */
+}

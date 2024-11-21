@@ -1,0 +1,40 @@
+<div class="bg">
+    <a class="btn btn-details btn-outline-dark btn-lg " routerLink="/CREATECAMMION" role="button"
+        style="margin-top:30px; margin-left:30px;background-color:#edba60;"> Nouveau camion</a>
+    <div class="tit-his">
+        <h1 class="fw-bolder text-center" style="color: #000000;">Mes Camions</h1>
+    </div>
+   
+    <table class="table tab-his caption-top">
+        <thead class="table" style="background-color: #edba60;">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Type</th>
+                <th scope="col">marque</th>
+                <th scope="col">matricule</th>
+                <th scope="col">Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="cammions.length > 0; else notFound">
+                <tr *ngFor="let cammion of cammions; let i = index">
+                    <th scope="row">{{cammion.cammionsId}}</th>
+                    <td>{{ cammion.type }}</td>
+                    <td>{{ cammion.marque }}</td>
+                    <td>{{ cammion.matricule }}</td>
+                    <td>
+                        <button class="btn btn-outline-dark btn-lg bg-red"
+                            (click)="removeCammions(cammion.cammionsId)">Supprimer</button>
+                    </td>
+                </tr>
+            </ng-container>
+            <ng-template #notFound>
+                <tr>
+                    <td colspan="4" class="text-center">Aucun camion trouvé</td>
+                </tr>
+            </ng-template>
+        </tbody>
+    </table>
+
+</div>

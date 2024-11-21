@@ -1,0 +1,32 @@
+<div class="bg">
+    <div class="tit-his">
+        <h1 class="fw-bolder ">CHAUFFEURS</h1>
+    </div>
+    <button class="btn"
+        (click)="sendtocreatechff()">Ajouter Chauffeur</button>
+    <table class="table tab-his caption-top">
+        <thead class="table">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">nom</th>
+                <th scope="col">prenom</th>
+                <th scope="col">email</th>
+                <th scope="col">ville</th>
+                <th scope="col">action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of Users">
+                <td>{{ user.uid }}</td>
+                <td>{{ user.nom }}</td>
+                <td>{{ user.prenom }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.ville }}</td>
+                <button class="btn"
+                    (click)="removegragiste(user.uid)">Supprimer</button>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>

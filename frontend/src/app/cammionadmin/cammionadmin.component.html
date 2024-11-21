@@ -1,0 +1,31 @@
+<div class="bg">
+    <div class="tit-his">
+        <h1 class="fw-bolder text-center" style="color: #000000;">Camion</h1>
+    </div>
+    <a class="btn btn-details" routerLink="/CREATECAMMION" role="button"
+        > Nouveau camion</a>
+    <table class="table tab-his caption-top">
+
+        <thead class="table" style="background-color: #edba60;">
+            <tr>
+                <th class="text-center" scope="col">matricule</th>
+                <th class="text-center" scope="col">marque</th>
+                <th class="text-center" scope="col">type</th>
+                <th class="text-center" scope="col">action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of data">
+                <td>{{ d.matricule }}</td>
+                <td>{{ d.marque }}</td>
+                <td>{{ d.type }}</td>
+                <td><button class="btn"
+
+                        (click)="removecammion(d.cammionsId)">Supprimer</button></td>
+
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

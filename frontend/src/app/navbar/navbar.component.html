@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color:#edba60;">
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    <a routerLink="Accueil" class="navbar-brand ml-lg-3">
+      <img src="../../../assets/1/ejrili.jpeg" height="65" alt="Ejrili Logo" style="margin-left: 60px;" />
+    </a>
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 200px;">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/accueil">Accueil</a>
+        </li>
+        <li *ngIf="user.user.type == 'C'" class="nav-item">
+          <a class="nav-link" routerLink="/REMORQUAGE">Remorquage</a>
+        </li>
+
+
+        <li *ngIf="user.user.type == 'U'">
+          <a class="nav-link" routerLink="/MESDEMANDES">Mes demandes</a>
+        </li>
+        <!--
+        <li *ngIf="user.user.type == 'C'">
+          <a class="nav-link" routerLink="/MESCAMMIONS">Mes Camions</a>
+        </li> -->
+
+
+
+        <li *ngIf="user.user.type == 'C'">
+          <a class="nav-link" routerLink="/MESREMORQUAGES">Mes Remorquages</a>
+        </li>
+
+        <li *ngIf="user.user.type == 'G'">
+          <a class="nav-link" routerLink="/GARAGE">GARAGE</a>
+        </li>
+
+        <li *ngIf="user.user.type == 'A'">
+          <a class="nav-link" routerLink="/admin">Admin</a>
+        </li>
+        <li class="nav-item" *ngIf="user.user.type == 'U'">
+          <a class="nav-link" routerLink="/CONTACT"> Contact </a>
+        </li>
+
+
+      </ul>
+
+
+
+      <!-- Avatar -->
+      <div class="dropdown" style="margin-left: 250px;">
+        <!-- <a *ngIf="cuser.grade=='user'" class="text-reset me-3 dropdown-toggle hidden-arrow" href="#"
+          id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-bell"></i>
+        </a> -->
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+        </ul>
+      </div>
+      <a style="display: flex; align-items: center; justify-content: center; padding-right: 10px;"
+        class="dropdown-toggle d-flex align-items-center hidden-arrow" style="color:#090702; font-weight: 800; margin-left: 5%;" routerLink="#" id="navbarDropdownMenuAvatar"
+        role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+        {{user.user.nom +" "+ user.user.prenom}}
+      </a>
+      <i class="black-circle"
+        style="display: flex; align-items: center; justify-content: center; margin-left: 5%;">{{user.user.nom[0]}}</i>
+
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+        <li>
+          <a class="dropdown-item" *ngIf="user.user.type == 'U' ||user.user.type == 'G'  " routerLink="/PROFIL">Mon
+            profil</a>
+        </li>
+
+        <li (click)="SignOut()"><a routerLink="accueil " class="dropdown-item">Se déconnecter</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  <!-- Notifications -->
+
+
+
+
+</nav>

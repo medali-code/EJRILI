@@ -1,0 +1,110 @@
+<section class="background-radial-gradient overflow-hidden">
+  <style>
+    .background-radial-gradient {
+      background-color: hsl(0, 0%, 0%);
+      background-image: radial-gradient(650px circle at 0% 0%,
+          hsl(0, 0%, 0%) 15%,
+          hsl(0, 0%, 0%) 35%,
+          hsl(0, 0%, 0%) 75%,
+          hsl(0, 0%, 100%) 80%,
+          transparent 100%),
+        radial-gradient(1250px circle at 100% 100%,
+          hsl(0, 0%, 100%) 15%,
+          hsl(0, 0%, 0%) 35%,
+          hsl(0, 0%, 100%) 75%,
+          hsl(0, 0%, 0%) 80%,
+          transparent 100%);
+    }
+
+    #radius-shape-1 {
+      height: 220px;
+      width: 220px;
+      top: -60px;
+      left: -130px;
+      background: radial-gradient(#c5c2c2, #000000);
+      overflow: hidden;
+    }
+
+    #radius-shape-2 {
+      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+      bottom: -60px;
+      right: -110px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(#000000);
+      overflow: hidden;
+    }
+
+    .bg-glass {
+      background-color: hsla(0, 0%, 100%, 0.659) !important;
+      backdrop-filter: saturate(200%) blur(25px);
+    }
+  </style>
+
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <h1 class="my-5 display-5 fw-bold ls-tight" style="color:#edba60 ">
+          Contactez-nous <br />
+          <span style="color: #edba60 ">Partout à tout moment! </span>
+        </h1>
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <p class="card-text">N'hésitez pas, nous sommes à vos cotés pour vous servir et restituer votre voiture
+              comme jamais auparavant, Ici Ejrili. </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <form (submit)="authService.SignIn(userName.value, userPassword.value)">
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+
+
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" #userName required id="form3Example3" class="form-control" />
+                <label class="form-label" for="form3Example3">Adresse Email</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input  #userPassword required type="password" id="form3Example4"
+                  class="form-control" />
+                <label class="form-label" for="form3Example4">Mot de Passe</label>
+              </div>
+
+
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-dark text-black btn-block mb-4" style="background-color:#edba60">
+                Connexion
+              </button>
+
+              <!-- Register buttons -->
+              <div class="text-center">
+                <p>ou inscrivez-vous avec :</p>
+                <a class="btn text-black btn-floating m-1 btn-outline-light" style="background-color:#edba60" href="#!"
+                  role="button"><i class="fab fa-facebook-f"></i></a>
+
+                <a class="btn text-black btn-floating m-1 btn-outline-light" style="background-color:#edba60" href="#!"
+                  role="button">
+                  <i class="fab fa-google"></i>
+                </a>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

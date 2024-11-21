@@ -1,0 +1,61 @@
+<!-- Background image -->
+<div class="p-5 text-center bg-image" style="
+   background-image: url('../../../assets/1/panne-voiture.jpg');
+   height: 400px;
+ ">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+                <h1 class="mb-3 uppercase" style="color:white"> EJRILI TOUJOURS AVEC TOI </h1>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Background image -->
+<button class="btn btn-outline-dark btn-dark text-warning" style="margin-left: 50px; margin-top: 30px;"
+    (click)="sendtocreateinv()">NOUVELLE INTERVENTION </button>
+<div class="row title">
+    <h2 class="text-dark text-center uppercase ">LISTE INTERVENTIONS </h2>
+</div>
+
+<table class="table tab-remo table-bordered">
+    <thead class="bg-warning">
+        <tr>
+
+            <th class="text-center" scope="col">Date</th>
+            <th class="text-center" scope="col">Voiture</th>
+            <th class="text-center" scope="col">Type</th>
+            <th class="text-center" scope="col">Description</th>
+            <th class="text-center" scope="col">Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    <tbody>
+        <tr *ngFor="let d of intervention">
+            <td>{{d.interventions.Date}}</td>
+            <td>{{d.demendes.Voiture}}</td>
+            <td>{{d.interventions.Type}}</td>
+            <td>{{d.interventions.Description}}</td>
+
+
+
+            <td>
+                <button class="btn btn-outline-dark btn-lg bg-red"
+                    (click)="removeintervention(d.interventions.interventionId)">Supprimer</button>
+            </td>
+
+
+            <!--                   <td>
+        sélectionnez un camion
+        <select class=" form-select" aria-label="Default select example">
+          <option *ngFor="let c of camions" [value]="c.id">{{c.marque}}</option>
+          </select>
+          <button class="btn btn-primary">accepter</button>
+          <br><br>
+      </td> -->
+        </tr>
+    </tbody>
+</table>

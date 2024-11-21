@@ -1,0 +1,29 @@
+
+<div class="bg">
+<h2>Ajouter Intervention</h2>
+
+<form (ngSubmit)="createIntervention()">
+
+    <div>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" [min]="getCurrentDate()" [(ngModel)]="interventionData.Date" required>
+    </div>
+    <div>
+        <label>Voiture:</label>
+        <select [(ngModel)]="interventionData.demandesId" class=" form-select" name="demandeId">
+            <option *ngFor="let c of demandes" [ngValue]="c.demandesId">{{c.Voiture}}</option>
+        </select>
+    </div>
+    <div>
+        <label for=" type">Type:</label>
+        <input type="text" id="type" name="type" [(ngModel)]="interventionData.Type" required>
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" [(ngModel)]="interventionData.Description"></textarea>
+    </div>
+
+
+    <button type="submit">Ajouter</button>
+</form>
+</div>

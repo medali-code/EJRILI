@@ -1,0 +1,88 @@
+<div class="container py-5">
+
+
+  <div class="row">
+    <div class="col-lg-3 ">
+      <div class="card mb-3">
+        <div class="card-body text-center" style="height: 195px">
+
+          <h5 class="my-3">{{user.nom +" "+ user.prenom}}</h5>
+          <div class="d-flex justify-content-center mb-2">
+            <button type="button"
+              (click)="update(nom.value,prenom.value,email.value,cin.value,ville.value,telephone.value)" class="btn "
+              style="background-color:#edba60;">Modifier</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-8">
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Nom</p>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" #nom name="nom" class="form-control" placeholder="votre nom" aria-label="Username"
+                aria-describedby="basic-addon1" [value]='user.nom' [disabled]='true'>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Prénom</p>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" #prenom name="prenom" class="form-control" placeholder="Belgacem Jaber"
+                aria-label="Username" aria-describedby="basic-addon1" [value]='user.prenom' [disabled]='true'>
+            </div>
+          </div>
+          <br>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Email</p>
+            </div>
+            <div class="col-sm-9">
+              <input type="email" #email name="email" class="form-control" placeholder="email" aria-label="Username"
+                aria-describedby="basic-addon1" [value]='user.email'>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">CIN</p>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" #cin name="cin" class="form-control" placeholder="cin" aria-label="Username"
+                  aria-describedby="basic-addon1" [value]='user.cin'>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">ville</p>
+              </div>
+              <div class="col-sm-9">
+                <textarea type="text" #ville name="ville" class="form-control" placeholder="adresse"
+                  aria-label="adresse" aria-describedby="basic-addon1" [value]='user.ville'> </textarea>
+              </div>
+              <div class="col-sm-3">
+                <p class="mb-0">telephone</p>
+              </div>
+              <div class="col-sm-9">
+                <textarea type="text" #telephone name="telephone" class="form-control" placeholder="adresse"
+                  aria-label="adresse" aria-describedby="basic-addon1" [value]='user.telephone'> </textarea>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>

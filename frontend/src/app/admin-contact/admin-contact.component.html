@@ -1,0 +1,35 @@
+
+    <div class="tit-his">
+        <h1 class="fw-bolder" style="color: #000000;">Avis</h1>
+    </div>
+    <table class="table tab-his caption-top">
+        <thead class="table" style="background-color: #edba60;">
+            <tr>
+                <th scope="col">text</th>
+                <th scope="col">email</th>
+                <th scope="col">emetteur</th>
+                <th scope="col">Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="avis.length > 0; else notFound">
+                <tr *ngFor="let avi of avis; let i = index">
+                    <th scope="row">{{avi.text}}</th>
+                    <td>{{ avi.email }}</td>
+                    <td>{{ avi.emetteur }}</td>
+                    <td>
+
+                        <button class="btn btn-outline-dark btn-lg bg-red"
+                            (click)="removeAvis(avi.avisId)">Supprimer</button>
+                    </td>
+                </tr>
+            </ng-container>
+            <ng-template #notFound>
+                <tr>
+                    <td colspan="4" class="text-center">Aucune avis trouvée</td>
+                </tr>
+            </ng-template>
+        </tbody>
+    </table>
+

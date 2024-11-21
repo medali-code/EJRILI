@@ -1,0 +1,16 @@
+
+<form [formGroup]="newCammion" (ngSubmit)="createCamion()" class="mb-3">
+    <div class="form-group">
+        <label for="type">Type:</label>
+        <input type="text" class="form-control" id="type" formControlName="type" required>
+    </div>
+    <div class="form-group">
+        <label for="marque">Marque:</label>
+        <input type="text" class="form-control" id="marque" formControlName="marque" required>
+    </div>
+    <div class="form-group">
+        <label for="matricule">Matricule:</label>
+        <input type="text" class="form-control" id="matricule" formControlName="matricule" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+</form>

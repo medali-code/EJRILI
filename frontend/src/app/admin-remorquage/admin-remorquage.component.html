@@ -1,0 +1,39 @@
+<div class="bg">
+  <div class="tit-his">
+    <h1 class="fw-bolder text-center" style="color: #000000; margin-left: 60%;">DEMANDES REMORQUAGE</h1>
+  </div>
+  <table class="table tab-his caption-top">
+    <thead class="table">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Voiture</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Date</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="demandes.length > 0; else notFound">
+        <tr *ngFor="let demande of demandes; let i = index">
+          <th scope="row">{{demande.demandesId}}</th>
+          <td>{{ demande.Voiture }}</td>
+          <td>{{ demande.Destination }}</td>
+          <td>{{ demande.Date }}</td>
+          <td>
+            <button class="btn btn-outline-dark btn-lg bg-red"
+              (click)="removeDemande(demande.demandesId)">Supprimer</button>
+          </td>
+          <td>
+            <button *ngIf="demande.valid === false" class="btn btn-outline-dark btn-lg bg-red"
+              (click)="AccepteDemande(demande.demandesId)">Accepter</button>
+          </td>
+        </tr>
+      </ng-container>
+      <ng-template #notFound>
+        <tr>
+          <td colspan="5" class="text-center">Aucune demande trouvée</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+</div>

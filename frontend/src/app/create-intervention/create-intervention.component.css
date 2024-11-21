@@ -1,0 +1,62 @@
+.bg {
+
+  width: 1200px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f8f8f6;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding-left: 20%;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+form {
+  margin-bottom: 30px;
+  width: 500px;
+  padding: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #000000;
+}
+
+input[type="date"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+button[type="submit"] {
+  margin-top: 3%;
+  padding: 10px 20px;
+  background-color: #edba60;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #f28a03;
+}
+
+button[type="submit"]:active {
+  transform: translateY(1px);
+}
